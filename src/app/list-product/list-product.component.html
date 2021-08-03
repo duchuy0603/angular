@@ -1,0 +1,43 @@
+    <!-- <button class="btn btn-primary" routerLink="/product/add">
+        Add
+        </button> -->
+        <table class="table table-striped table-sm">
+            <thead>
+              <tr>
+                <th scope="col">id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                
+                <th scope="col">title</th>
+                <th scope="col">description</th>
+                <th scope="col">author</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let product of products,index as i">
+                <td>{{i+1}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+              
+                <td>{{ product.title}}</td>
+                <td>{{ product.desc}}</td>
+                <td>{{ product.author}}</td>
+                <td>
+                  <button class="btn btn-primary" routerLink="/product/{{product.id}}/edit">
+                    Edit
+                   </button>
+                  <button class="btn btn-danger" (click)="removeItem(product.id)">
+                    Delete
+                  </button>
+                 
+               
+                  
+                 
+                </td>
+              </tr>
+           
+              <!-- <div *ngIf="selected">
+                <app-product-detail [data]="selected"></app-product-detail>
+              </div> -->
+            </tbody>
+          </table>
